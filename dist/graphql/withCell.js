@@ -105,7 +105,7 @@ var withCell = function withCell(_ref) {
 
   return function (props) {
     return /*#__PURE__*/_react.default.createElement(_reactComponents.Query, (0, _extends2.default)({
-      query: queryObject
+      query: queryObject(props)
     }, beforeQuery(props)), function (_ref2) {
       var error = _ref2.error,
           loading = _ref2.loading,
