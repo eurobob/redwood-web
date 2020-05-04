@@ -95,9 +95,17 @@ var withCell = function withCell(_ref) {
     return isDataNull(data) || isDataEmptyArray(data);
   };
 
+  var queryObject = function queryObject(props) {
+    if (typeof QUERY === 'function') {
+      return QUERY(props);
+    }
+
+    return QUERY;
+  };
+
   return function (props) {
     return /*#__PURE__*/_react.default.createElement(_reactComponents.Query, (0, _extends2.default)({
-      query: QUERY
+      query: queryObject
     }, beforeQuery(props)), function (_ref2) {
       var error = _ref2.error,
           loading = _ref2.loading,
